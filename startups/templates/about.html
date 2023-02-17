@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+      <div class="page-header d-flex align-items-center" style="background-image: url('');">
+        <div class="container position-relative">
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h2>About Us</h2>
+              </div>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <div class="container">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>About</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="section-header">
+            <h2>About Us</h2>
+           </div>
+  
+          <div class="row gy-4">
+            <div class="col-lg-6">
+              <h3>Our Story</h3>
+              <img src="{%static 'img/about.jpg' %}" class="img-fluid rounded-4 mb-4" alt="">
+              <p>Brief Description</p> </div>
+            <div class="col-lg-6">
+              <div class="content ps-0 ps-lg-5">
+  
+                <div class="position-relative mt-4">
+                  <p>description</p>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </section><!-- End About Us Section -->
+  
+      <!-- ======= Clients Section ======= -->
+      <section id="clients" class="clients">
+        <div class="container" data-aos="zoom-out">
+          <div class="section-header">
+            <h2>Our Clients</h2>
+             </div>
+          <div class="clients-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+              <div class="swiper-slide"><img src="{%static 'img/clients/client-1.png' %}" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="{%static 'img/clients/client-2.png' %}" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="{%static 'img/clients/client-3.png' %}" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="{%static 'img/clients/client-4.png' %}" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="{%static 'img/clients/client-5.png' %}" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="{%static 'img/clients/client-6.png' %}" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="{%static 'img/clients/client-7.png' %}" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="{%static 'img/clients/client-8.png' %}" class="img-fluid" alt=""></div>
+            </div>
+          </div>
+  
+        </div>
+      </section><!-- End Clients Section -->
+  
+      <!-- ======= Stats Counter Section ======= -->
+      <section id="stats-counter" class="stats-counter">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="row gy-4 align-items-center">
+  
+            <div class="col-lg-6">
+              <img src="{%static 'img/stats-img.svg' %}" alt="" class="img-fluid">
+            </div>
+  
+            <div class="col-lg-6">
+  
+              <div class="stats-item d-flex align-items-center">
+                <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+                <p><strong>Happy Clients</strong> </p>
+              </div><!-- End Stats Item -->
+  
+              <div class="stats-item d-flex align-items-center">
+                <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+                <p><strong>Completed Projects</strong> </p>
+              </div><!-- End Stats Item -->
+  
+              <div class="stats-item d-flex align-items-center">
+                <span class="">24/7</span>
+                <p><strong>Hours Of Support</strong></p>
+              </div><!-- End Stats Item -->
+  
+            </div>
+  
+          </div>
+  
+        </div>
+      </section><!-- End Stats Counter Section -->
+
+  </main><!-- End #main -->
+{% include 'footer.html' %}
+
+{% endblock %}

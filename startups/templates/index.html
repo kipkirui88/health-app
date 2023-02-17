@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+ 
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero">
+    <div class="container position-relative">
+      <div class="row gy-5" data-aos="fade-in">
+        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
+          <h2>Welcome to <span>HealthStar</span></h2>
+          <p>HealthStar is a company that helps your StartUp grow.Also Careers in your Company we help you post them.</p>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            <a href="#about" class="btn-get-started">Get Started</a>
+            </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2">
+          <img src="{%static 'img/hero-img.svg' %}" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
+        </div>
+      </div>
+    </div>
+
+    <div class="icon-boxes position-relative">
+      <div class="container position-relative">
+        <div class="row gy-4 mt-5">
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-person"></i></div>
+              <h4 class="title"><a href="" class="stretched-link">Create Account</a></h4>
+            </div>
+          </div>
+          <!--End Icon Box -->
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-rocket"></i></div>
+              <h4 class="title"><a href="" class="stretched-link">Upload Your Startup</a></h4>
+            </div>
+          </div>
+          <!--End Icon Box -->
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-briefcase"></i></div>
+              <h4 class="title"><a href="" class="stretched-link">Post a Job</a></h4>
+            </div>
+          </div>
+          <!--End Icon Box -->
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-check-circle"></i></div>
+              <h4 class="title"><a href="" class="stretched-link">Wait For Approval</a></h4>
+            </div>
+          </div>
+          <!--End Icon Box -->
+
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </section>
+  <!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio sections-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Recent StartUps</h2>
+          </div>
+
+        <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4 portfolio-container">
+            
+            {% for startups in startups %}
+            <div class="col-xl-3 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <a href="https://{{ startups.website }}" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{ startups.image.url }}" class="img-fluid" alt="" style="height: 30vh; width: 100%;"></a>
+                <div class="portfolio-info">
+                  <h4><a href="https://{{ startups.website }}" title="More Details">{{ startups.name }} </a> <p class="bi bi-tags"> {{ startups.specialty }}</p></h4>
+                  <b><h6 class="bi bi-geo-alt">{{ startups.location }}</h6> </b>
+                  <p>{{ startups.description|slice:"100" }}</p>
+                  <p><b class="bi bi-phone">+{{ startups.contact }}</b>  || <a href="https://{{ startups.website }}" class="bi bi-link">Website</a></p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            {% endfor %}
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="content px-xl-5">
+              <h3>Frequently Asked <strong>Questions</strong></h3>
+              </div>
+          </div>
+
+          <div class="col-lg-8">
+            
+            <div class="accordion accordion-flush" id="faqlist" data-aos="fade-up" data-aos-delay="100">
+              <div class="accordion-item">
+                {% for faqs in faqs %}
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
+                    <span class="num">{{ faqs.id }}.</span>
+                    {{ faqs.title }}
+                  </button>
+                </h3>
+                <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                  {{ faqs.description }} 
+                  </div>
+                </div>
+                {% endfor %}
+              </div><!-- # Faq item-->
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+  </main><!-- End #main -->
+
+  {% include 'footer.html' %}
+
+{% endblock %}

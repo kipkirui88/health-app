@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+      <div class="page-header d-flex align-items-center" style="background-image: url('');">
+        <div class="container position-relative">
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h2>Contact Us</h2>
+              </div>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <div class="container">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>Contact</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Breadcrumbs -->
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="section-header">
+            <h2>Contact</h2>
+              </div>
+  
+          <div class="row gx-lg-0 gy-4">
+  
+            <div class="col-lg-4">
+  
+              <div class="info-container d-flex flex-column align-items-center justify-content-center">
+                <div class="info-item d-flex">
+                  <i class="bi bi-geo-alt flex-shrink-0"></i>
+                  <div>
+                    <h4>Location:</h4>
+                    <p>A108 Adam Street, New York, NY 535022</p>
+                  </div>
+                </div><!-- End Info Item -->
+  
+                <div class="info-item d-flex">
+                  <i class="bi bi-envelope flex-shrink-0"></i>
+                  <div>
+                    <h4>Email:</h4>
+                    <p>info@example.com</p>
+                  </div>
+                </div><!-- End Info Item -->
+  
+                <div class="info-item d-flex">
+                  <i class="bi bi-phone flex-shrink-0"></i>
+                  <div>
+                    <h4>Call:</h4>
+                    <p>+1 5589 55488 55</p>
+                  </div>
+                </div><!-- End Info Item -->
+  
+                <div class="info-item d-flex">
+                  <i class="bi bi-clock flex-shrink-0"></i>
+                  <div>
+                    <h4>Open Hours:</h4>
+                    <p>Mon-Fri: 8AM - 5PM</p>
+                  </div>
+                </div><!-- End Info Item -->
+              </div>
+  
+            </div>
+            <style>
+              .contact .contact_form {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 0 10px 10px 0;
+}
+
+.contact .contact_form .form-group {
+  padding-bottom: 8px;
+}
+.contact .contact_form input,
+.contact .contact_form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+.contact .contact_form input[type=text],
+.contact .contact_form input[type=email],
+.contact .contact_form textarea {
+  padding: 12px 15px;
+}
+
+.contact .contact_form input[type=text]:focus,
+.contact .contact_form input[type=email]:focus,
+.contact .contact_form textarea:focus {
+  border-color: var(--color-primary);
+}
+
+.contact .contact_form textarea {
+  padding: 10px 12px;
+}
+
+.contact .contact_form button[type=submit] {
+  background: var(--color-primary);
+  border: 0;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.contact .contact_form button[type=submit]:hover {
+  background: rgba(0, 131, 116, 0.8);
+}
+            </style>
+  
+            <div class="col-lg-8">
+              <form class="contact_form" action="" method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Enter Message"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mt-3">
+                    <button type="submit" class="button button-contactForm boxed-btn">Send</button>
+                </div>
+            </form>
+            </div><!-- End Contact Form -->
+  
+          </div>
+  
+        </div>
+      </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+{% include 'footer.html' %}
+
+{% endblock %}
